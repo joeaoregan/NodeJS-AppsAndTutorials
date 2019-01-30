@@ -38,6 +38,8 @@ io.on('connection', (socket) => {
 		console.log('Current Users ('+users.length+'): ' + users);
 		//socket.broadcast.emit('user.events', {name: 'update', message: 'User: ' + data.name + ' has joined the chat. Users: ' + userList.length, users: userList});
 		socket.broadcast.emit('user.events', {name: 'system', message: 'User: ' + data.name + ' has joined the chat. Users: ' + users.length});
+		
+		io.emit('update-user-list', users);
 	});
 	
 	socket.on('updateuser', (data) => {
@@ -55,6 +57,11 @@ io.on('connection', (socket) => {
 			console.log('User: ' + data.oldname + ' is now "' + data.newname + '"');
 			console.log('Current Users ('+users.length+'): ' + users);
 			socket.broadcast.emit('user.events', {name: 'system', message: 'User: ' + data.oldname + ' is now "' + data.newname + '"'});
+			
+			
+			
+			
+			io.emit('update-user-list', users);
 		}
 	});
 	

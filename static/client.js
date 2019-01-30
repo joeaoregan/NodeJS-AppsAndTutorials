@@ -121,6 +121,35 @@ socket.on('user.events', (data) => {
 
 socket.on('message', (data) => addMessage(data.name, data.message, 'left'));
 
+
+socket.on('update-user-list', (data) => {	
+	var list = document.getElementById("userList");
+	
+	// Clear current user list
+	while (list.hasChildNodes()) {
+		list.removeChild(list.firstChild);
+	}
+	
+	// Update list
+	for (var i = 0; i < data.length; i++) {
+	//	var listItem = document.createElement('li');
+	//	//listItem.appendChild(document.createTextNode(data[i]));	// username text to display
+	//	listItem.appendChild(document.createTextNode('test'));	// username text to display
+	//	list.appendChild(listItem);
+	//console.log
+		addToList(data[i]);
+	}
+});
+
+function addToList(item) {
+	var list = document.getElementById("userList");
+	var listItem = document.createElement('li');
+	//listItem.appendChild(document.createTextNode(data[i]));	// username text to display
+	listItem.appendChild(document.createTextNode(item));	// username text to display
+	list.appendChild(listItem);
+}
+
+
 //socket.on('setname', (data) => updateUsers(data));
 
 function updateUsers(data) {
@@ -128,10 +157,10 @@ function updateUsers(data) {
 	userList = data.users;
 	
 	// Clear current user list
-	var list = document.getElementById("userList");
-	while (list.hasChildNodes()) {
-		list.removeChild(list.firstChild);
-	}
+	//var list = document.getElementById("userList");
+	//while (list.hasChildNodes()) {
+	//	list.removeChild(list.firstChild);
+	//}
   /*
 	for (var i = 0; i = userList.length; i++) {
 		var listItem = document.createElement('li');
