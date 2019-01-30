@@ -1,4 +1,5 @@
-// Interacting with another browsers
+// Interacting with other browsers
+// https://www.linkedin.com/learning/building-complex-express-sites-with-redis-and-socket-io/broadcasting-a-message
 
 const express = require('express'),
 	http = require('http');
