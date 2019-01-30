@@ -1,27 +1,74 @@
-// Interacting with other browsers
-// https://www.linkedin.com/learning/building-complex-express-sites-with-redis-and-socket-io/broadcasting-a-message
-
+/*
+	Joe O'Regan
+	30/01/2019
+*/
 const express = require('express'),
 	http = require('http');
 	socketio = require('socket.io');
 
 var port = process.env.PORT || 3000;
 var app = express();
-//var server = app.listen(8080);
-//var server = app.listen(process.env.PORT || 3000);
-//var io = socketio(server);
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
 app.use(express.static('static'));
 
+var users = [];
+
 io.on('connection', (socket) => {
-	socket.broadcast.emit('user.events', {name: 'system', message: 'Someone has joined!'});
+	//socket.broadcast.emit('user.events', {name: 'system', message: 'Someone has joined!'});
 	console.log('New User Connected');
+	
+	socket.on('newuser', (data) => {
+		console.log('new connection from ');
+		
+		var nameExists = false;
+		
+		for (var i = 0; i < users.length; i++) {
+			if (users[i] == data.name) {
+				nameExists = true;
+				break;
+			}
+		}
+		
+		if (!nameExists) {
+			users.push(data.name);
+		}
+		
+		console.log('Current Users ('+users.length+'): ' + users);
+		//socket.broadcast.emit('user.events', {name: 'update', message: 'User: ' + data.name + ' has joined the chat. Users: ' + userList.length, users: userList});
+		socket.broadcast.emit('user.events', {name: 'system', message: 'User: ' + data.name + ' has joined the chat. Users: ' + users.length});
+	});
+	
+	socket.on('updateuser', (data) => {
+		var nameChanged = false;
+		
+		for (var i = 0; i < users.length; i++) {
+			if (users[i] == data.oldname) {
+				users[i] = data.newname;
+				nameChanged = true;
+				break;
+			}
+		}
+		
+		if (nameChanged) {
+			console.log('User: ' + data.oldname + ' is now "' + data.newname + '"');
+			console.log('Current Users ('+users.length+'): ' + users);
+			socket.broadcast.emit('user.events', {name: 'system', message: 'User: ' + data.oldname + ' is now "' + data.newname + '"'});
+		}
+	});
 	
 	socket.on('message', (data) => {
 		console.log(data.name, 'says', data.message);
 		socket.broadcast.emit('message', data);	// broadcast to everyone except this
+	});
+	
+	socket.on('disconnect', function() {
+		console.log('User has disconnected / reset connection');
+		
+		if (users.length > 0) {
+			socket.broadcast.emit('user.events', {name: 'system', message: 'Someone has left the chat!'});
+		}
 	});
 });
 

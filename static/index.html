@@ -10,99 +10,32 @@
 	<h2>by Joe O'Regan</h2>
 	
 	<div class="main">
-		<div class="chatdiv" id="chatdiv">
-			<div>
-				<input type="text" id="name" placeholder="Enter Username"/>
-				<button id="sendName">Submit Username</button>
-			</div>
-			
-			
-			
-			
+		<div class="usernamediv">
+			<input type="text" id="name" placeholder="Enter Username" required autofocus>
+			<button id="sendName">Submit Username</button>
+			<p id="usernamedets">Enter Unique Username To Chat</p>
+		</div>
+		
+		<div class="chatdiv" id="chatdiv">			
 			<div class="msgdiv" id = "msgList"></div>
 			<br>
+		</div>
 			
+		<div class="inputdiv">
+			<input type="text" id="messagetext" placeholder="Enter Message..." class="inputTxt"/>
 			
-			
-			
-			<div class="input">
-				<input type="text" id="messagetext" placeholder="Enter Message..." class="inputTxt"/>
-				
-				<button id="message" class="button inputBtn">Submit Message</button>
-			</div>
+			<button id="message" class="button inputBtn">Submit Message</button>
+		</div>
+	</div>
+	
+	<div class="main">
+		<h2>Users</h2>
+		<div class="userlist">
+			<ul id="userList"><li>There are no active users</li></ul>
 		</div>
 	</div>
 	
 	<script src="/socket.io/socket.io.js"></script>
-	<script>
-		var lastActiveUser = '';
-	
-		var socket = io({transports: ['websocket'], upgrade: false});
-		
-		var addMessage = (username, message, messageType) => {
-			//var li = document.createElement('li');
-			//li.appendChild(document.createTextNode(message));
-			//document.getElementById('list').appendChild(li);
-			
-			console.log('Message Type: ' + messageType);
-			
-			var outerMessageDiv = document.createElement('div');
-			var usernameDiv = document.createElement('div');
-			var newMessageDiv = document.createElement('div');
-			
-			
-			//if (messageType.localeCompare('info')) {
-			if (messageType == 'info') {
-				//console.log('set class info');
-				outerMessageDiv.classList.add('info-outer');
-				newMessageDiv.classList.add('info');
-			} else if (messageType == 'left') {				
-				//console.log('set class left');
-				outerMessageDiv.classList.add('left-outer');
-				newMessageDiv.classList.add('chat');
-				newMessageDiv.classList.add('left-inner');
-			} else if (messageType == 'right') {
-				//console.log('set class right');
-				outerMessageDiv.classList.add('right-outer');
-				newMessageDiv.classList.add('chat');
-				newMessageDiv.classList.add('right-inner');
-			} 
-			
-			newMessageDiv.appendChild(document.createTextNode(message));
-			
-			if (username != 'system' && messageType == 'left') {
-				if (lastActiveUser != username) {
-					console.log('check username: ' + username);
-					usernameDiv.classList.add('username');						// format the output by setting css class
-					usernameDiv.appendChild(document.createTextNode(username));	// username text to display
-					outerMessageDiv.appendChild(usernameDiv);
-					lastActiveUser = username;
-				}
-			}
-			outerMessageDiv.appendChild(newMessageDiv);
-			
-			var messageList = document.getElementById('msgList');
-			//messageList.insertBefore(outerMessageDiv, messageList.childNodes[0]); // last active user name comes up on top of first message
-			messageList.appendChild(outerMessageDiv);
-		};
-		
-		// send value from input box
-		document.getElementById('message').addEventListener('click', (e) => {
-			socket.emit('message', {
-				name: document.getElementById('name').value,
-				message: document.getElementById('messagetext').value
-			});
-			
-			addMessage(document.getElementById('name').value, document.getElementById('messagetext').value, 'right');	// add message client side
-			lastActiveUser = '';	// reset the last active user so name appears
-		});
-		
-		socket.on('user.events', (data) => {
-			addMessage(data.name, data.message, 'info');
-			console.log("info message received");
-		});
-		
-		socket.on('message', (data) => addMessage(data.name, data.message, 'left'));
-	</script>
+	<script src="client.js"></script>
 </body>
 </html>

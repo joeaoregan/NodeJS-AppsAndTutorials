@@ -15,6 +15,25 @@ body {
 	margin-right: auto;
 }
 
+.userlist {
+	text-align: left;
+}
+
+.usernamediv {
+	margin-bottom: 10px;
+}
+
+.chatdiv {
+	border: 2px solid lightgrey;
+	height: 400px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.inputdiv {
+	margin-top: 10px;
+}
+
 .chat {
 	border-radius:12px;
 	padding: 5px;
