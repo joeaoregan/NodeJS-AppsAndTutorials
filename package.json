@@ -1,7 +1,7 @@
 {
   "name": "heroku-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple chat application using JavaScript and Node.js",
   "main": "server.js",
   "dependencies": {
     "express": "^4.16.4",
@@ -13,5 +13,13 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeaoregan/chat-jor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joeaoregan/chat-jor/issues"
+  },
+  "homepage": "https://github.com/joeaoregan/chat-jor#readme"
 }

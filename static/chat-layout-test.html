@@ -11,32 +11,32 @@
 }
 
 .chat {
-	border-radius:10px;
-	padding: 1%;
+	border-radius:12px;
+	padding: 5px;
+	display: inline-block;
 }
 
 .left-outer {
 	border: 3px solid red;
-	margin-right: 10%;
 }
 
 .left-inner {
-	display: inline-block;
+	margin-right: 10%;
 	background-color: lightgrey;
-	//float: left;
 }
 
 .right-outer {
 	border: 3px solid blue;
 	text-align: right;
-	margin-left: 10%;
 }
 
 .right-inner {
-	display: inline-block;
-	//float: right;
+	margin-left: 10%;
 	background-color: lightblue;
-	text-align: right;
+}
+
+.username {
+	color: lightgrey;
 }
 		</style>
 	</head>
@@ -50,6 +50,7 @@
 		
 		<div class="main">
 			<div class="left-outer">
+				<div class="username">user 1</div>
 				<div class="chat left-inner">
 					<b>User1: </b>Text will appear in a bubble and stay with in the div boundaries
 				</div>
@@ -57,13 +58,14 @@
 
 			<div class="right-outer">
 				<div class="chat right-inner">
-					<b>User2: </b>Text will appear in a bubble and stay with in the div boundaries.
+					<b>User: </b>Text will appear in a bubble and stay with in the div boundaries.
 				</div>
 			</div>
 
 			<div class="left-outer">
+				<div class="username">user 2</div>
 				<div class="chat left-inner">
-					<b>User1: </b>test
+					<b>User2: </b>test
 				</div>
 			</div>
 
