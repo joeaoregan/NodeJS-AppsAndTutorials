@@ -1,4 +1,5 @@
-# Connect 5
+# NodeJS Chat App
+## Joe O'Regan
 
 Simple chat application using JavaScript and Node.js
 
