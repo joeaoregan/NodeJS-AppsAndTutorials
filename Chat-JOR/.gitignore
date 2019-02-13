@@ -1,0 +1,17 @@
+# Joe O'Regan
+# 30/01/2019
+
+# Ignore this
+
+/node_modules
+npm-debug.log
+.DS_Store
+/.env
+
+# Keep this
+
+!/static/*
+!.gitignore
+!README.md
+!package.json
+!package-lock.json
