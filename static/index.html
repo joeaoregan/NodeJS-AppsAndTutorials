@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Socket.io</title>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8"><!-- emojiis -->
+</head>
+
+<body>
+	<h1>Simple NodeJS Chat Application</h1>
+	<h2>by Joe O'Regan</h2>
+	
+	<div class="main">
+		<div class="usernamediv">
+			<input type="text" id="name" placeholder="Enter Username" required autofocus>
+			<button id="sendName">Submit Username</button>
+			<p id="usernamedets">Enter Unique Username To Chat</p>
+		</div>
+		
+		<div class="chatdiv" id="chatdiv">			
+			<div class="msgdiv" id = "msgList"></div>
+			<br>
+		</div>
+			
+		<div class="inputdiv">
+			<input type="text" id="messagetext" placeholder="Enter Message..." class="inputTxt"/>
+			
+			<button id="message" class="button inputBtn">Submit Message</button>
+		</div>
+	</div>
+	
+	<div class="main">
+		<h2>Users</h2>
+		<div class="userlist">
+			<ul id="userList">
+				<li>There are no active users</li>
+			</ul>
+		</div>
+	</div>
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="client.js"></script>
+</body>
+</html>

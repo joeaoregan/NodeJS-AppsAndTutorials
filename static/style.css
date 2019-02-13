@@ -1,0 +1,76 @@
+/*
+	Joe O'Regan
+	30/01/2019
+*/
+
+body {
+	text-align: center;
+}
+
+.main {
+	padding: 2%;
+	border: 2px solid grey;
+	max-width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.userlist {
+	text-align: left;
+}
+
+.usernamediv {
+	margin-bottom: 10px;
+}
+
+.chatdiv {
+	padding: 2%;
+	border: 2px solid lightgrey;
+	height: 400px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+.inputdiv {
+	margin-top: 10px;
+}
+
+.chat {
+	border-radius:12px;
+	padding: 5px;
+	display: inline-block;
+}
+
+.info-outer {
+	//border: 3px solid grey;
+	text-align: center;
+}
+
+.info {
+	color: grey;
+	//text-align: center;
+}
+
+.left-outer {
+	//border: 3px solid red;
+	text-align: left;
+}
+
+.left-inner {
+	margin-right: 10%;
+	background-color: lightgrey;
+}
+
+.right-outer {
+	//border: 3px solid blue;
+	text-align: right;
+}
+
+.right-inner {
+	margin-left: 10%;
+	background-color: lightblue;
+}
+
+.username {
+	color: lightgrey;
+}

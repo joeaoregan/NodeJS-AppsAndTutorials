@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+.main {
+	padding: 2%;
+	border: 2px solid grey;
+	max-width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.chat {
+	border-radius:12px;
+	padding: 5px;
+	display: inline-block;
+}
+
+.left-outer {
+	border: 3px solid red;
+}
+
+.left-inner {
+	margin-right: 10%;
+	background-color: lightgrey;
+}
+
+.right-outer {
+	border: 3px solid blue;
+	text-align: right;
+}
+
+.right-inner {
+	margin-left: 10%;
+	background-color: lightblue;
+}
+
+.username {
+	color: lightgrey;
+}
+		</style>
+	</head>
+	
+	<body>
+		<div style="text-align:center;">
+			<h2>Chat App - Message Text Layout</h2>
+
+			<p>Test layout of message text for chat application</p>
+		</div>
+		
+		<div class="main">
+			<div class="left-outer">
+				<div class="username">user 1</div>
+				<div class="chat left-inner">
+					<b>User1: </b>Text will appear in a bubble and stay with in the div boundaries
+				</div>
+			</div>
+
+			<div class="right-outer">
+				<div class="chat right-inner">
+					<b>User: </b>Text will appear in a bubble and stay with in the div boundaries.
+				</div>
+			</div>
+
+			<div class="left-outer">
+				<div class="username">user 2</div>
+				<div class="chat left-inner">
+					<b>User2: </b>test
+				</div>
+			</div>
+
+			<div class="right-outer">
+				<div class="chat right-inner">
+					<span>test 2</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
