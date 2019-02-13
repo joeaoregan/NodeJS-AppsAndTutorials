@@ -9,7 +9,7 @@ Multiplayer browser games using JavaScript and Node.js
 
 ## Connect 5
 
-![Connect 5](https://raw.githubusercontent.com/joeaoregan/HTML5-NodeJS-Tutorial-Game/master/Screenshots/screenshot2.png "Connect 5")
+![Connect 5](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot2.png "Connect 5")
 
 So far, only single player (working on it)
 [Azure Link](http://test2-k00203642.azurewebsites.net/)
@@ -18,7 +18,7 @@ So far, only single player (working on it)
 
 ## Tanks
 
-![Multiplayer Browser Game](https://raw.githubusercontent.com/joeaoregan/HTML5-NodeJS-Tutorial-Game/master/Screenshots/screenshot1.png "Multiplayer Browser Game")
+![Multiplayer Browser Game](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot1.png "Multiplayer Browser Game")
 
 ### Instructions
 1. [Install Node.js](https://nodejs.org/en/)
