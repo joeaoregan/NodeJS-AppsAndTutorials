@@ -18,7 +18,7 @@ So far, only single player (working on it)
 
 ## Tanks
 
-![Multiplayer Browser Game](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot1.png "Multiplayer Browser Game")
+![Multiplayer Browser Game](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot1.jpg "Multiplayer Browser Game")
 
 ### Instructions
 1. [Install Node.js](https://nodejs.org/en/)
