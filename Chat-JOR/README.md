@@ -6,6 +6,8 @@ Simple chat application using JavaScript and Node.js
 
 ## Chat App
 
+![Simple Chat Application](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot3.png "Simple Chat Application")
+
 * [See App On Heroku](https://chat-jor.herokuapp.com/)
 
 

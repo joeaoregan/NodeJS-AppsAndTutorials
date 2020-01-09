@@ -43,6 +43,8 @@ node server.js
 
 ## Chat
 
+![Simple Chat Application](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot3.png "Simple Chat Application")
+
 Attempt at creating a [chat app](https://github.com/joeaoregan/NodeJC-AppsAndTutorials/tree/master/Chat-JOR) similar in style to Messenger
 
 * [See App On Heroku](https://chat-jor.herokuapp.com/)
