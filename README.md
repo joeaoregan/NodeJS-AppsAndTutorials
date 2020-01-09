@@ -18,7 +18,7 @@ So far, only single player (working on it)
 
 ## Tanks
 
-![Multiplayer Browser Game](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot1.jpg "Multiplayer Browser Game")
+![Multiplayer Browser Game](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot1.png "Multiplayer Browser Game")
 
 ### Instructions
 1. [Install Node.js](https://nodejs.org/en/)
@@ -43,7 +43,7 @@ node server.js
 
 ## Chat
 
-![Simple Chat Application](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot3.png "Simple Chat Application")
+![Simple Chat Application](https://raw.githubusercontent.com/joeaoregan/NodeJS-AppsAndTutorials/master/Screenshots/screenshot3.jpg "Simple Chat Application")
 
 Attempt at creating a [chat app](https://github.com/joeaoregan/NodeJC-AppsAndTutorials/tree/master/Chat-JOR) similar in style to Messenger
 
